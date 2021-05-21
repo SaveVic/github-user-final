@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.githubuserfinal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <permission android:name="com.example.githubuserfinal.READ_DATABASE" android:protectionLevel="normal"/>
+    <permission android:name="com.example.githubuserfinal.WRITE_DATABASE" android:protectionLevel="normal"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GithubUserFinal">
+        <provider
+            android:name=".data.provider.StoredProvider"
+            android:authorities="com.example.githubuserfinal"
+            android:enabled="true"
+            android:exported="true"
+            android:writePermission="com.example.githubuserfinal.WRITE_DATABASE"
+            android:readPermission="com.example.githubuserfinal.READ_DATABASE"/>
+
+        <activity android:name=".ui.main.view.SettingActivity" />
+        <activity android:name=".ui.main.view.FavoriteActivity" />
+        <activity android:name=".ui.main.view.DetailActivity" />
+        <activity android:name=".ui.main.view.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".data.local.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

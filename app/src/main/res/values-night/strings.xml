@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favorite">Favorite</string>
+    <string name="favorite_title">User Favorite</string>
+    <string name="setting_title">Setting</string>
+    <string name="setting_notify_text">Notify Me</string>
+</resources>
